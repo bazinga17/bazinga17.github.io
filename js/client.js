@@ -60,8 +60,8 @@ window.TrelloPowerUp.initialize({
     'board-buttons': function (t, opts) {
         return [{
             icon: {
-                dark: WHITE_ICON,
-                light: BLACK_ICON
+                dark: BLACK_ROCKET_ICON,
+                //light: BLACK_ICON
             },
             text: 'Callback',
             callback: function () { console.log('click'); },
