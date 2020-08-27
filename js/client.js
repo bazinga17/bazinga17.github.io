@@ -25,6 +25,8 @@ TrelloPowerUp.initialize({
             .get('name')
             .then(function (cardName) {
                 console.log('We just loaded the card name for fun: ' + cardName);
+                console.log(t);
+                console.log(opts);
                 return [{
                     // Dynamic badges can have their function rerun
                     // after a set number of seconds defined by refresh.
