@@ -17,4 +17,10 @@ TrelloPowerUp.initialize({
 	 	  }];
 	 })
 	},
+	
+	'card-badges': function (t, opts) {
+	return [{dinamic: function (){return {text:'jhfhjgjhfd',color: 'green', refresh:10 };
+				     }
+	       }];
+		}
 }); 
