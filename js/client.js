@@ -16,5 +16,5 @@ TrelloPowerUp.initialize({
 	//       }
 	// 	  }];
 	// })
-	// },
+	},
 }); 
