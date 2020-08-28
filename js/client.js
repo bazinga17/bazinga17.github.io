@@ -1,8 +1,20 @@
 var Promise = TrelloPowerUp.Promise;
 
-var BLACK_ROCKET_ICON = 'https://cdn.glitch.com/1b42d7fe-bda8-4af8-a6c8-eff0cea9e08a%2Frocket-ship.png?1494946700421';
+var icon_time = 'https://bazinga17.github.io/icon_tr.png';
 
-console.log('1');
+console.log('2');
+
+TrelloPowerUp.initialize({
+    'card-badges': function (t, opts)
+    {
+        retrun t.card('name').get('name').then(function () {
+            return [{ text: 'all hour' }, { text: 'uniq hour' }];
+        });
+    }
+
+});
+
+
 
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
@@ -62,7 +74,7 @@ window.TrelloPowerUp.initialize({
     'board-buttons': function (t, opts) {
         return [{
             icon: {
-                dark: BLACK_ROCKET_ICON,
+                dark: icon_time,
                 //light: BLACK_ICON
             },
             text: 'Callback',
