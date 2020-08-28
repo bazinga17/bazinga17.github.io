@@ -4,8 +4,10 @@ var icon_time = 'https://bazinga17.github.io/icon_tr.png';
 
 console.log('2');
 
-t.board('id', 'name', 'url', 'shortLink', 'members');
-console.log(name);
+function(t, opts) {
+    t.board('id', 'name', 'url', 'shortLink', 'members');
+    console.log(name);
+};
 
 TrelloPowerUp.initialize({
     'card-badges': function (t, opts)
