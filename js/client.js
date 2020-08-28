@@ -10,8 +10,20 @@ TrelloPowerUp.initialize({
         return t.card('name').get('name').then(function (cardName) {
             return [{ text: 'all hour' }, { text: 'uniq hour' }];
         });
-    }
+    },
 
+    'board-buttons': function (t, opts) {
+        return [{
+            icon: {
+                dark: icon_time,
+                //light: BLACK_ICON
+            },
+            text: 'Callback',
+            callback: function () { console.log('click'); },
+
+        }
+        ]
+    }
 });
 
 
@@ -70,20 +82,20 @@ TrelloPowerUp.initialize({
 //    }
 //}); 
 
-window.TrelloPowerUp.initialize({
-    'board-buttons': function (t, opts) {
-        return [{
-            icon: {
-                dark: icon_time,
-                //light: BLACK_ICON
-            },
-            text: 'Callback',
-            callback: function () { console.log('click'); },
+//window.TrelloPowerUp.initialize({
+//    'board-buttons': function (t, opts) {
+//        return [{
+//            icon: {
+//                dark: icon_time,
+//                //light: BLACK_ICON
+//            },
+//            text: 'Callback',
+//            callback: function () { console.log('click'); },
 
-        }
-        ]
-    }
-});
+//        }
+//        ]
+//    }
+//});
 
 
 
