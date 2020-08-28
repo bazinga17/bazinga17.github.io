@@ -5,7 +5,7 @@ var icon_time = 'https://bazinga17.github.io/icon_tr.png';
 console.log('2');
 
 var t = TrelloPowerUp.iframe();
-return t.get('board', 'shared', 'myKey')
+t.get('board', 'shared', 'myKey')
     .then(function (data) {
         console.log(JSON.stringify(data, null, 2));
     });
