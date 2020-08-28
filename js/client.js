@@ -7,7 +7,7 @@ console.log('2');
 TrelloPowerUp.initialize({
     'card-badges': function (t, opts)
     {
-        retrun t.card('name').get('name').then(function () {
+        return t.card('name').get('name').then(function () {
             return [{ text: 'all hour' }, { text: 'uniq hour' }];
         });
     }
