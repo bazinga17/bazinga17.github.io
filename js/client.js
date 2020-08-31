@@ -6,37 +6,27 @@ console.log('2');
 var time_all = 52;
 var time_uniq = 2;
 
-//TrelloPowerUp.initialize({
-//    'card-badges': function (t, opts)
-//    {
-//        return t.card('name').get('name').then(function (cardName) {
-//            return [{ text: time_all }, { text: time_uniq }];
-//        });
-//    },
-
-//    'board-buttons': function (t, opts) {
-//        return [{
-//            icon: {
-//                dark: icon_time,
-//                light: BLACK_ICON
-//            },
-//            text: 'Callback',
-//            callback: function () { console.log('click'); },
-
-//        }
-//        ]
-//    }
-//});
-
-var t = TrelloPowerUp.iframe();
-t.get('board', 'shared', 'myKey')
-    .then(function (data) {
-        console.log(JSON.stringify(data, null, 2));
-    });
-
-        t.card('name').get('name').then(function (cardName) {
+TrelloPowerUp.initialize({
+    'card-badges': function (t, opts)
+    {
+        return t.card('name').get('name').then(function (cardName) {
             return [{ text: time_all }, { text: time_uniq }];
         });
+    },
+
+    'board-buttons': function (t, opts) {
+        return [{
+            icon: {
+                dark: icon_time,
+                light: BLACK_ICON
+            },
+            text: 'Callback',
+            callback: function () { console.log(t.board()); },
+        }
+        ]
+    }
+});
+
 
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
