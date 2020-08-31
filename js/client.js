@@ -6,19 +6,19 @@ console.log('2');
 var time_all = 52;
 var time_uniq = 2;
 
-TrelloPowerUp.initialize({
-    'card-badges': function (t, opts)
-    {
-        return t.card('name').get('name').then(function (cardName) {
-            return [{ text: time_all }, { text: time_uniq }];
-        });
-    },
+//TrelloPowerUp.initialize({
+//    'card-badges': function (t, opts)
+//    {
+//        return t.card('name').get('name').then(function (cardName) {
+//            return [{ text: time_all }, { text: time_uniq }];
+//        });
+//    },
 
 //    'board-buttons': function (t, opts) {
 //        return [{
 //            icon: {
 //                dark: icon_time,
-//                //light: BLACK_ICON
+//                light: BLACK_ICON
 //            },
 //            text: 'Callback',
 //            callback: function () { console.log('click'); },
@@ -26,7 +26,7 @@ TrelloPowerUp.initialize({
 //        }
 //        ]
 //    }
-});
+//});
 
 var t = TrelloPowerUp.iframe();
 t.get('board', 'shared', 'myKey')
