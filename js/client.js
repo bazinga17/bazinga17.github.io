@@ -3,14 +3,14 @@ var Promise = TrelloPowerUp.Promise;
 var icon_time = 'https://bazinga17.github.io/icon_tr.png';
 
 console.log('2');
-//t.board('id', 'name', 'url', 'shortLink', 'members');
-    //console.log(name);
+var time_all = 52;
+var time_uniq = 2;
 
 TrelloPowerUp.initialize({
     'card-badges': function (t, opts)
     {
         return t.card('name').get('name').then(function (cardName) {
-            return [{ text: 'all hour' }, { text: 'uniq hour' }];
+            return [{ text: time_all }, { text: time_uniq }];
         });
     },
 
