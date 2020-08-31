@@ -34,6 +34,10 @@ t.get('board', 'shared', 'myKey')
         console.log(JSON.stringify(data, null, 2));
     });
 
+        return t.card('name').get('name').then(function (cardName) {
+            return [{ text: time_all }, { text: time_uniq }];
+        });
+
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
 //	'card-buttons': function (t, options)
