@@ -4,17 +4,10 @@ var icon_time = 'https://bazinga17.github.io/icon_tr.png';
 
 console.log('2');
 
-var t = TrelloPowerUp.iframe();
-t.get('board', 'shared', 'myKey')
-    .then(function (data) {
-        console.log(JSON.stringify(data, null, 2));
-    });
-
 //t.board('id', 'name', 'url', 'shortLink', 'members');
     //console.log(name);
 
-//TrelloPowerUp.initialize({
-
+TrelloPowerUp.initialize({
 //    'card-badges': function (t, opts)
 //    {
 //        return t.card('name').get('name').then(function (cardName) {
@@ -34,8 +27,12 @@ t.get('board', 'shared', 'myKey')
 //        }
 //        ]
 //    }
-//});
-
+});
+var t = TrelloPowerUp.iframe();
+t.get('board', 'shared', 'myKey')
+    .then(function (data) {
+        console.log(JSON.stringify(data, null, 2));
+    });
 
 
 //TrelloPowerUp.initialize({
