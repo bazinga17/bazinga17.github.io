@@ -18,10 +18,9 @@ TrelloPowerUp.initialize({
         return [{
             icon: {
                 dark: icon_time,
-                light: BLACK_ICON
             },
             text: 'Callback',
-            callback: function () { console.log(t.board()); },
+            callback: function () { console.log(t.board("name")); },
         }
         ]
     }
