@@ -1,22 +1,34 @@
+var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-// you can access arguments passed to your iframe like so
-var arg = t.arg('arg');
+var fruitSelector = document.getElementById('fruit');
+var vegetableSelector = document.getElementById('vegetable');
 
 t.render(function () {
-    // make sure your rendering logic lives here, since we will
-    // recall this method as the user adds and removes attachments
-    // from your section
-    t.card('attachments')
-        .get('attachments')
-        .filter(function (attachment) {
-            return attachment.url.indexOf('http://www.nps.gov/yell/') == 0;
-        })
-        .then(function (yellowstoneAttachments) {
-            var urls = yellowstoneAttachments.map(function (a) { return a.url; });
-            document.getElementById('urls').textContent = urls.join(', ');
+    return Promise.all([
+        t.get('board', 'shared', 'fruit'),
+        t.get('board', 'private', 'vegetable')
+    ])
+        .spread(function (savedFruit, savedVegetable) {
+            if (savedFruit && /[a-z]+/.test(savedFruit)) {
+                fruitSelector.value = savedFruit;
+            }
+            if (savedVegetable && /[a-z]+/.test(savedVegetable)) {
+                vegetableSelector.value = savedVegetable;
+            }
         })
         .then(function () {
-            return t.sizeTo('#content');
-        });
+            t.sizeTo('#content')
+                .done();
+        })
 });
+
+document.getElementById('save').addEventListener('click', function () {
+    return t.set('board', 'private', 'vegetable', vegetableSelector.value)
+        .then(function () {
+            return t.set('board', 'shared', 'fruit', fruitSelector.value);
+        })
+        .then(function () {
+            t.closePopup();
+        })
+})
