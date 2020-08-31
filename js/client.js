@@ -350,6 +350,17 @@ TrelloPowerUp.initialize({
     },
     'card-detail-badges': function (t, options) {
         return getBadges(t);
+    },
+    'card-back-section': function (t, options) {
+        return {
+            title: 'My Card Back Section',
+            icon: icon_time, // Must be a gray icon, colored icons not allowed.
+            content: {
+                type: 'iframe',
+                url: t.signUrl('./section.html'),
+                height: 230 // Max height is 1500
+            }
+        };
     }
 });
 
