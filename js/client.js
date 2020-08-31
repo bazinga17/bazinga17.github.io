@@ -357,7 +357,7 @@ TrelloPowerUp.initialize({
             icon: icon_time, // Must be a gray icon, colored icons not allowed.
             content: {
                 type: 'iframe',
-                url: t.signUrl('./section.html'),
+                url: t.signUrl('./js/section.js'),
                 height: 230 // Max height is 1500
             }
         };
