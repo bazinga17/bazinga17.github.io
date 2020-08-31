@@ -34,7 +34,7 @@ t.get('board', 'shared', 'myKey')
         console.log(JSON.stringify(data, null, 2));
     });
 
-        return t.card('name').get('name').then(function (cardName) {
+        t.card('name').get('name').then(function (cardName) {
             return [{ text: time_all }, { text: time_uniq }];
         });
 
