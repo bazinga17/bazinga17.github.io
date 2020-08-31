@@ -13,13 +13,13 @@ t.get('board', 'shared', 'myKey')
 //t.board('id', 'name', 'url', 'shortLink', 'members');
     //console.log(name);
 
-//TrelloPowerUp.initialize({
-//    'card-badges': function (t, opts)
-//    {
-//        return t.card('name').get('name').then(function (cardName) {
-//            return [{ text: 'all hour' }, { text: 'uniq hour' }];
-//        });
-//    },
+TrelloPowerUp.initialize({
+    'card-badges': function (t, opts)
+    {
+        return t.card('name').get('name').then(function (cardName) {
+            return [{ text: 'all hour' }, { text: 'uniq hour' }];
+        });
+    },
 
 //    'board-buttons': function (t, opts) {
 //        return [{
@@ -33,7 +33,7 @@ t.get('board', 'shared', 'myKey')
 //        }
 //        ]
 //    }
-//});
+});
 
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
