@@ -3,13 +3,6 @@ var Promise = TrelloPowerUp.Promise;
 var icon_time = 'https://bazinga17.github.io/icon_tr.png';
 
 console.log('2');
-
-var t = TrelloPowerUp.iframe();
-t.get('board', 'shared', 'myKey')
-    .then(function (data) {
-        console.log(JSON.stringify(data, null, 2));
-    });
-
 //t.board('id', 'name', 'url', 'shortLink', 'members');
     //console.log(name);
 
@@ -34,6 +27,12 @@ TrelloPowerUp.initialize({
 //        ]
 //    }
 });
+
+var t = TrelloPowerUp.iframe();
+t.get('board', 'shared', 'myKey')
+    .then(function (data) {
+        console.log(JSON.stringify(data, null, 2));
+    });
 
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
