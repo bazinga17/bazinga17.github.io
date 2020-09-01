@@ -6,15 +6,12 @@ var time_all = 52;
 var time_uniq = 2;
 
 TrelloPowerUp.initialize({
-    //this field
     'card-badges': function (t, opts)
     {
         return t.card('name').get('name').then(function (cardName) {
-            return [{ text: time_all }];
+            return [{ text: time_all, color: 'blue' }];
         });
     },
-
-    //this output
     'board-buttons': function (t, opts) {
         return [{
             icon: {
@@ -26,16 +23,14 @@ TrelloPowerUp.initialize({
         ]
     },
 
-    //this field inside
     'card-buttons': function (t, options) {
         return [{
             text: _name,
             icon: icon_time,
-            callback: cardButtonCallback //тут выбор времени
+            callback: chooseTime(t)
         }]
     },
 
-    //this badge card
     'card-detail-badges': function (t, options) {
         return t.card('name').get('name').then(function (cardName) {
             return [{ text: time_all }];
@@ -44,7 +39,13 @@ TrelloPowerUp.initialize({
     
 });
 
-
+var chooseTime = function (t) {
+    return t.popup({
+        title: 'Set time',
+        date,
+        date,
+    })
+}
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
 //	'card-buttons': function (t, options)
@@ -248,7 +249,7 @@ var cardButtonCallback = function (t) {
     // we could provide a standard iframe popup, but in this case we
     // will let Trello do the heavy lifting
     return t.popup({
-        title: 'Popup Search Example',
+        title: 'Choose time',
         items: items, // Trello will search client-side based on the text property of the items
         search: {
             count: 5, // How many items to display at a time
