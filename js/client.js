@@ -42,8 +42,8 @@ TrelloPowerUp.initialize({
 var chooseTime = function (t) {
     return t.popup({
         title: 'Set time',
-        date,
-        date,
+        Date,
+
     })
 }
 //TrelloPowerUp.initialize({
