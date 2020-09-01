@@ -36,7 +36,7 @@ TrelloPowerUp.initialize({
     },
 
     //this badge card
-    'card-badges': function (t, options) {
+    'card-detail-badges': function (t, options) {
         return t.card('name').get('name').then(function (cardName) {
             return [{ text: time_all }];
         });
