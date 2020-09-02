@@ -28,6 +28,7 @@ TrelloPowerUp.initialize({
             text: _name,
             icon: icon_time,
             content: {
+                type:'iframe',
                 title: 'Add work time',
                 url: t.signUrl('./section.html')
             }
