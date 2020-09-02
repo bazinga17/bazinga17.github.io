@@ -27,10 +27,13 @@ TrelloPowerUp.initialize({
         return [{
             text: _name,
             icon: icon_time,
-            content: {
+            callback: function (t) {
+                return t.popup({
                     type: 'Custom',
-                url: t.signUrl('./section.html')
+                    url: t.signUrl('./section.html'),
+                })
             }
+        
         }]
     },
 
