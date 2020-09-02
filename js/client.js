@@ -29,7 +29,7 @@ TrelloPowerUp.initialize({
             icon: icon_time,
             callback: function (t) {
                 return t.popup({
-                    type: 'Custom',
+                    title: 'Custom',
                     //url: t.signUrl('https://bazinga17.github.io/section/section.html'),
                 })
             }
