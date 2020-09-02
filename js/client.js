@@ -27,27 +27,24 @@ TrelloPowerUp.initialize({
         return [{
             text: _name,
             icon: icon_time,
-            callback: function (t) {
-                return t.popup({
-                    title: 'Custom',
-                    //url: t.signUrl('https://bazinga17.github.io/section/section.html'),
-                })
-            }
-        
+            callback: chooseTime(t)
         }]
     },
 
     'card-detail-badges': function (t, options) {
         return t.card('name').get('name').then(function (cardName) {
-            return [{ text: time_all }];
+            return [{title: "Time", text: time_all }];
         });
     }
     
 });
 
 var chooseTime = function (t) {
-
-}
+    return t.popup({
+        title: 'Custom',
+        url: './section.html',
+    })
+};
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
 //	'card-buttons': function (t, options)
