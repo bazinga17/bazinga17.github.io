@@ -41,12 +41,13 @@ TrelloPowerUp.initialize({
 
 var chooseTime = function (t) {
     return t.popup({
-        type: 'date' | 'datetime',
-        title: String,
-        callback: function (t, opts) // opts.date is an ISOString
-  date?: Date,
-        minDate?: Date,
-        maxDate?: Date,
+        type: 'Custom', url:'./section.html'
+  //      type: 'date' | 'datetime',
+  //      title: String,
+  //      callback: function (t, opts) // opts.date is an ISOString
+  //date?: Date,
+  //      minDate?: Date,
+  //      maxDate?: Date,
     });
 }
 //TrelloPowerUp.initialize({
