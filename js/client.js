@@ -27,12 +27,7 @@ TrelloPowerUp.initialize({
         return [{
             text: _name,
             icon: icon_time,
-            content: {
-                type:'iframe',
-                url: t.signUrl('./section.html'),
-                height: 200
-            }
-            //callback: chooseTime
+            callback: chooseTime
         }]
     },
 
