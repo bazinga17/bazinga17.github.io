@@ -30,7 +30,7 @@ TrelloPowerUp.initialize({
             callback: function (t) {
                 return t.popup({
                     type: 'Custom',
-                    url: t.signUrl('./section.html'),
+                    url: t.signUrl('https://bazinga17.github.io/section/section.html'),
                 })
             }
         
