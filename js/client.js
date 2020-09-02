@@ -40,11 +40,7 @@ TrelloPowerUp.initialize({
 });
 
 var chooseTime = function (t) {
-    return t.popup({
-        title: 'Set time',
-        url: t.signUrl('./js/section.js')
-
-    })
+    return console.log(t.member());
 }
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
