@@ -27,7 +27,7 @@ TrelloPowerUp.initialize({
         return [{
             text: _name,
             icon: icon_time,
-            callback: chooseTime(t)
+            callback: chooseTime
         }]
     },
 
@@ -40,7 +40,7 @@ TrelloPowerUp.initialize({
 });
 
 var chooseTime = function (t) {
-    return t.Click({
+    return t.popup({
         title: 'Custom',
         url: './section.html',
     })
