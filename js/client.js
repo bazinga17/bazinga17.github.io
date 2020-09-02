@@ -40,7 +40,14 @@ TrelloPowerUp.initialize({
 });
 
 var chooseTime = function (t) {
-    return console.log(t.member());
+    return t.popup({
+        type: 'date' | 'datetime',
+        title: String,
+        callback: function (t, opts) // opts.date is an ISOString
+  date?: Date,
+        minDate?: Date,
+        maxDate?: Date,
+    });
 }
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
