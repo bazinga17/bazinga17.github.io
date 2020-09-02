@@ -27,7 +27,10 @@ TrelloPowerUp.initialize({
         return [{
             text: _name,
             icon: icon_time,
-            callback: chooseTime(t)
+            content: {
+                    type: 'Custom',
+                url: t.signUrl('./section.html')
+            }
         }]
     },
 
@@ -40,15 +43,7 @@ TrelloPowerUp.initialize({
 });
 
 var chooseTime = function (t) {
-    return t.popup({
-        type: 'Custom', url:'./section.html'
-  //      type: 'date' | 'datetime',
-  //      title: String,
-  //      callback: function (t, opts) // opts.date is an ISOString
-  //date?: Date,
-  //      minDate?: Date,
-  //      maxDate?: Date,
-    });
+
 }
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
