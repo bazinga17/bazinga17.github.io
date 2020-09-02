@@ -40,7 +40,7 @@ TrelloPowerUp.initialize({
 });
 
 var chooseTime = function (t) {
-    return t.popup({
+    return t.Click({
         title: 'Custom',
         url: './section.html',
     })
