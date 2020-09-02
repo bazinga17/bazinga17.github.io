@@ -29,8 +29,8 @@ TrelloPowerUp.initialize({
             icon: icon_time,
             content: {
                 type:'iframe',
-                title: 'Add work time',
-                url: t.signUrl('./section.html')
+                url: t.signUrl('./section.html'),
+                height: 200
             }
             //callback: chooseTime
         }]
@@ -46,7 +46,7 @@ TrelloPowerUp.initialize({
 
 var chooseTime = function (t) {
     return t.popup({
-        title: 'Custom',
+        title: 'Add work time',
         url: './section.html',
     })
 };
