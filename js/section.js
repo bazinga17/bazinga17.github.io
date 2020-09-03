@@ -6,7 +6,7 @@ var _date = document.getElementById('date_in_time');
 
 
 document.getElementById('add_work').addEventListener('click', function () {
-    return console.log(time_spend + _date).
+    return console.log(time_spend + _date)
         .then(function () {
             t.closePopup();
         })
