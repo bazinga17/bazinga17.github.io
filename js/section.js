@@ -1,34 +1,12 @@
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
-console.log(2);
 
-var fruitSelector = document.getElementById('fruit');
-var vegetableSelector = document.getElementById('vegetable');
+var time_spend = document.getElementById('get_time');
+var _date = document.getElementById('date_in_time');
 
-t.render(function () {
-    return Promise.all([
-        t.get('board', 'shared', 'fruit'),
-        t.get('board', 'private', 'vegetable')
-    ])
-        .spread(function (savedFruit, savedVegetable) {
-            if (savedFruit && /[a-z]+/.test(savedFruit)) {
-                fruitSelector.value = savedFruit;
-            }
-            if (savedVegetable && /[a-z]+/.test(savedVegetable)) {
-                vegetableSelector.value = savedVegetable;
-            }
-        })
-        .then(function () {
-            t.sizeTo('#content')
-                .done();
-        })
-});
 
-document.getElementById('save').addEventListener('click', function () {
-    return t.set('board', 'private', 'vegetable', vegetableSelector.value)
-        .then(function () {
-            return t.set('board', 'shared', 'fruit', fruitSelector.value);
-        })
+document.getElementById('add_work').addEventListener('click', function () {
+    return console.log(time_spend + _date).
         .then(function () {
             t.closePopup();
         })

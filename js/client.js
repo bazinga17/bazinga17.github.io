@@ -43,7 +43,7 @@ var chooseTime = function (t) {
     return t.popup({
         title: 'Add work time',
         url: './section.html',
-        height: 200
+        height: 190
     })
 };
 //TrelloPowerUp.initialize({
