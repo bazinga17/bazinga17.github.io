@@ -6,7 +6,7 @@ var time_all = 52;
 var time_uniq = 2;
 
 TrelloPowerUp.initialize({
-    'attachment-sections': function (t, options) {
+    'card-back-section': function (t, options) {
         //var claimed = options.entries.filter(function (attechment) { return attechment })
         return [{
             id: 'Worktime', // optional if you aren't using a function for the title
