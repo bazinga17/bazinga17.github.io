@@ -6,6 +6,23 @@ var time_all = 52;
 var time_uniq = 2;
 
 TrelloPowerUp.initialize({
+    'attachment-sections': function (t, options) {
+        //var claimed = options.entries.filter(function (attechment) { return attechment })
+        return [{
+            id: 'Work time', // optional if you aren't using a function for the title
+            claimed: claimed,
+            icon: icon_time, // Must be a gray icon, colored icons not allowed.
+            title: 'Example Attachment Section: Yellowstone',
+            //content: {
+            //    type: 'iframe',
+            //    url: t.signUrl('./section.html', {
+            //        arg: 'you can pass your section args here'
+            //    }),
+            //    height: 230
+            //}
+        }];
+    },
+
     'card-badges': function (t, opts)
     {
         return t.card('name').get('name').then(function (cardName) {
