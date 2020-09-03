@@ -15,7 +15,7 @@ TrelloPowerUp.initialize({
             title: 'Work log',
             content: {
                 type: 'iframe',
-                url: t.signUrl('./section.html', {
+                url: t.signUrl('./worklogs.html', {
                     arg: 'you can pass your section args here'
                 }),
                 height: 230
