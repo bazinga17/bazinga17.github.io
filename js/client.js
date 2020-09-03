@@ -13,13 +13,13 @@ TrelloPowerUp.initialize({
             claimed: claimed,
             icon: icon_time, // Must be a gray icon, colored icons not allowed.
             title: 'Example Attachment Section: Yellowstone',
-            //content: {
-            //    type: 'iframe',
-            //    url: t.signUrl('./section.html', {
-            //        arg: 'you can pass your section args here'
-            //    }),
-            //    height: 230
-            //}
+            content: {
+                type: 'iframe',
+                url: t.signUrl('./section.html', {
+                    arg: 'you can pass your section args here'
+                }),
+                height: 230
+            }
         }];
     },
 
