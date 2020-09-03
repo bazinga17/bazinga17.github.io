@@ -12,7 +12,7 @@ TrelloPowerUp.initialize({
             id: 'Worktime', // optional if you aren't using a function for the title
             //claimed: claimed,
             icon: icon_time, // Must be a gray icon, colored icons not allowed.
-            title: 'Example Attachment Section: Yellowstone',
+            title: 'Work log',
             content: {
                 type: 'iframe',
                 url: t.signUrl('./section.html', {
