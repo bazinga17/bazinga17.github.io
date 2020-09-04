@@ -34,7 +34,7 @@ TrelloPowerUp.initialize({
             icon: {
                 dark: icon_time,
             },
-            text: 'Callback',
+            text: 'Upload time',
             callback: function () { console.log(t.list("name")); },
         }
         ]
