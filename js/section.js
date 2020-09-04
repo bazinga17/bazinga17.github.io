@@ -9,7 +9,7 @@ document.getElementById('add_work').addEventListener('click', function () {
     var opt = document.createElement("li");
     opt.text = time_spend + ' ' + _date;
 
-    x.add(opt, x[0]);
+    console.log(x);
 
     return console.log(time_spend + _date)
 })
