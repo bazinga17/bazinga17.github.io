@@ -1,7 +1,3 @@
-var dateFormat = require('dateformat');
-var now = new Date();
-dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
-
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
@@ -9,7 +5,7 @@ var time_spend = document.getElementById('get_time').value;
 var _date = document.getElementById('date_in_time').value;
 
 t.render(function () {
-    console.log(now);
+    console.log(Date.now('isoDateTime'));
     //return Promise.all([t.get('card', 'shared', 'time_list')]);
     //document.getElementById('date_in_time').value = Date.now().
 });
