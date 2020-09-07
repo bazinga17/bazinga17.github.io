@@ -5,7 +5,7 @@ var time_spend = document.getElementById('get_time').value;
 var _date = document.getElementById('date_in_time').value;
 
 t.render(function () {
-    console.log(Date.now('isoDateTime'));
+    console.log(Date());
     //return Promise.all([t.get('card', 'shared', 'time_list')]);
     //document.getElementById('date_in_time').value = Date.now().
 });
