@@ -10,4 +10,5 @@ var _date = document.getElementById('date_in_time').value;
 
 document.getElementById('add_work').addEventListener('click', function () {
     return t.set('card', 'shared', 'time_list', time_spend + _date);
+    console.log('add');
 })
