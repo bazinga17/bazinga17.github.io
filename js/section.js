@@ -8,7 +8,7 @@ var _date = document.getElementById('date_in_time').value;
 //    return Promise.all([t.get('card', 'shared', 'time_list')]);
 //});
 
-document.getElementById('add_work').addEventListener('click', function () {
-    return t.set('card', 'shared', 'time_list', time_spend + _date);
-    console.log('add');
+document.getElementById('add_work').addEventListener('click', function () {    
+    t.set('card', 'shared', 'time_list', time_spend + _date);
+    return console.log('add');
 })
