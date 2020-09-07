@@ -5,8 +5,7 @@ var time_spend = document.getElementById('get_time').value;
 var _date = document.getElementById('date_in_time').value;
 
 t.render(function () {
-    //return Promise.all([t.get('card', 'shared', 'time_list')]);
-    document.getElementById('date_in_time').value = Date().toISOString();
+    return Promise.all([t.get('card', 'shared', 'time_list')]);
 });
 
 document.getElementById('add_work').addEventListener('click', function () {    
