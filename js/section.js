@@ -5,7 +5,12 @@ var time_spend = document.getElementById('get_time').value;
 var _date = document.getElementById('date_in_time').value;
 
 t.render(function () {
-    return Promise.all([t.get('card', 'shared', 'time_list')]);
+    //return Promise.all([t.get('card', 'shared', 'time_list')]);
+    t.get('card', 'shared', 'time_list', 'not set')
+        .then(function (data) {
+            console.log(JSON.stringify(data, null, 2));
+        });
+
 });
 
 document.getElementById('add_work').addEventListener('click', function () {    
