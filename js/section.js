@@ -1,8 +1,8 @@
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-var time_spend = document.getElementById('get_time').value;
-var _date = document.getElementById('date_in_time').value;
+var time_spend = document.getElementById('get_time');
+var _date = document.getElementById('date_in_time');
 
 
 //window.insert_time.addEventListener('submit', function (event) {
@@ -41,5 +41,5 @@ document.getElementById('add_work').addEventListener('click', function () {
             console.log(JSON.stringify(data, null, 2));
         });
 
-    return console.log(time_spend + _date);
+    return console.log(time_spend.value + _date.value);
 })
