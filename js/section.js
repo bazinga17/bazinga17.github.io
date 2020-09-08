@@ -15,6 +15,7 @@ t.render(function () {
     return t.get('card', 'shared', 'time_list')
         .then(function (time_list) {
             window.get_time.value = time_list;
+            console.log(time_list);
         })
         .then(function () { t.sizeTo('#insert_time').done() });
 });
