@@ -14,7 +14,7 @@ window.insert_time.addEventListener('submit', function (event) {
 t.render(function () {
     return t.get('card', 'shared', 'time_list')
         .then(function (time_list) {
-            time_spend = time_list;
+            time_spend.value = time_list;
             console.log(time_list);
         })
         .then(function () {
