@@ -5,7 +5,7 @@ var time_spend = document.getElementById('get_time').value;
 var _date = document.getElementById('date_in_time').value;
 
 
-window.section.addEventListener('submit', function (event) {
+window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
     return t.set('card', 'shared', 'time_list', time_spend).then(function () { t.closePopup(); });
 }); 
