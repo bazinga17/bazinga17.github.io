@@ -1,8 +1,9 @@
-//var Promise = TrelloPowerUp.Promise;
+var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-var time_spend = window.get_time.value;
-var _date = window.date_in_time.value;
+var time_spend = document.getElementById('get_time').value;
+var _date = document.getElementById('date_in_time').value;
+
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
