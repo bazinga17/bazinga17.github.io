@@ -7,6 +7,7 @@ var _date = document.getElementById('date_in_time').value;
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
+    console.log(time_spend);
     return t.set('card', 'shared', 'time_list', time_spend).then(function () { t.closePopup(); });
 }); 
 
