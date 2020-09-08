@@ -10,7 +10,6 @@ window.insert_time.addEventListener('submit', function (event) {
     return t.set('card', 'shared', 'time_list', time_spend).then(function () { t.closePopup(); });
 }); 
 
-
 t.render(function () {
     return t.getAll()//('card', 'shared', 'time_list')
         //.then(function (time_list) {
