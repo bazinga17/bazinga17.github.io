@@ -15,5 +15,11 @@ t.render(function () {
 
 document.getElementById('add_work').addEventListener('click', function () {    
     t.set('card', 'shared', 'time_list', time_spend + _date);
+
+    t.get('card', 'shared', 'time_list', 'not set')
+        .then(function (data) {
+            console.log(JSON.stringify(data, null, 2));
+        });
+
     return console.log('add');
 })
