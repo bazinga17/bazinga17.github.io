@@ -23,11 +23,14 @@ TrelloPowerUp.initialize({
         }];
     },
 
-    'card-badges': function (t, opts)
-    {
-        return t.card('name').get('name').then(function (cardName) {
-            return [{ text: time_all, color: 'blue' }];
-        });
+    'card-badges': function (t, opts) {
+        return t.get('card', 'shared', 'time_list')
+            .then(function (time_list) {
+                return [{
+                    text: time_list || '',
+                    color: time_list ? 'blue' : null,
+                }];
+            });
     },
     'board-buttons': function (t, opts) {
         return [{
@@ -50,7 +53,7 @@ TrelloPowerUp.initialize({
 
     'card-detail-badges': function (t, options) {
         return t.card('name').get('name').then(function (cardName) {
-            return [{title: "Time", text: time_all }];
+            return [{ title: "Time", text: GetAllTime || '', color: GetAllTime ? 'blue' : null }];
         });
     }
     
@@ -60,9 +63,18 @@ var chooseTime = function (t) {
     return t.popup({
         title: 'Add work time',
         url: './section.html',
-        height: 200
+        height: 230
     })
 };
+
+var GetAllTime = function (t) {
+    return t.get('card', 'shared', 'time_list')
+        .then(function (time_list) {
+            return [{
+                time_list
+            }];
+        });
+}
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
 //	'card-buttons': function (t, options)
