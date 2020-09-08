@@ -14,12 +14,11 @@ window.insert_time.addEventListener('submit', function (event) {
 t.render(function () {
     return t.get('card', 'shared', 'time_list')
         .then(function (time_list) {
-            window.get_time.value = time_list;
+            time_spend = time_list;
             console.log(time_list);
         })
-        .then(function (data) {
-            console.log(JSON.stringify(data));
-            t.sizeTo('#insert_time').done()
+        .then(function () {
+            t.sizeTo('#insert_time');
         });
 });
 
