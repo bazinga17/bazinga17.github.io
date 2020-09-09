@@ -1,14 +1,16 @@
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-//t.get('card', 'shared', 'time_list', 'not set')
-//    .then(function (data) {
-//        console.log(JSON.stringify(data, null, 2));
-//    });
 
-//var x = document.getElementById('list_date');
+t.get('card', 'shared', 'time_list', 'not set')
+    .then(function (data) {
+        console.log(data);
+//        var x = document.getElementById('list_date');
 //var opt = document.createElement('li');
 //opt.text = data;
 //console.log(x);
+    });
 
-//console.log(data);
+
+
+
