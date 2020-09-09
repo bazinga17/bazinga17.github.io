@@ -52,12 +52,14 @@ TrelloPowerUp.initialize({
     },
 
     'card-detail-badges': function (t, options) {
-        return t.card('name').get('name').then(function (cardName) {
-            console.log(GetAllTime);
-            return [{
-                title: "Time", text: GetAllTime || '', color: GetAllTime ? 'blue' : null
-            }];
-        });
+        return t.get('card', 'shared', 'time_list')
+            .then(function (time_list) {
+                return [{
+                    title: "Time",
+                    text: time_list || '',
+                    color: time_list ? 'blue' : null,
+                }];
+            });
     }
     
 });
@@ -70,14 +72,7 @@ var chooseTime = function (t) {
     })
 };
 
-var GetAllTime = function (t) {
-    var b = '';
-    t.get('card', 'shared', 'time_list')
-        .then(function (time_list) {
-            b = time_list.value;
-        });
-    return b;
-}
+
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
 //	'card-buttons': function (t, options)
