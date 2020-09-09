@@ -71,15 +71,12 @@ var chooseTime = function (t) {
 };
 
 var GetAllTime = function (t) {
-
+    var b = '';
     t.get('card', 'shared', 'time_list')
         .then(function (time_list) {
-            return [{
-                time_list
-            }];
+            b = time_list;
         });
-
-    return time_list;
+    return b;
 }
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
