@@ -11,33 +11,12 @@ window.insert_time.addEventListener('submit', function (event) {
     return t.set('card', 'shared', 'time_list', time_spend.value).then(function () { t.closePopup(); });
 }); 
 
-t.render(function () {
-    return t.get('card', 'shared', 'time_list')
-        .then(function (time_list) {
-            time_spend.value = time_list;
-        })
-        .then(function () {
-            t.sizeTo('#insert_time');
-        });
-});
-
-
 //t.render(function () {
-//    //return Promise.all([t.get('card', 'shared', 'time_list')]);
-//    t.get('card', 'shared', 'time_list', 'not set')
-//        .then(function (data) {
-//            console.log(JSON.stringify(data, null, 2));
+//    return t.get('card', 'shared', 'time_list')
+//        .then(function (time_list) {
+//            time_spend.value = time_list;
+//        })
+//        .then(function () {
+//            t.sizeTo('#insert_time');
 //        });
-
 //});
-
-//document.getElementById('add_work').addEventListener('click', function () {    
-//    t.set('card', 'shared', 'time_list', time_spend + _date);
-
-//    t.get('card', 'shared', 'time_list', 'not set')
-//        .then(function (data) {
-//            console.log(JSON.stringify(data, null, 2));
-//        });
-
-//    return console.log(time_spend.value + _date.value);
-//})
