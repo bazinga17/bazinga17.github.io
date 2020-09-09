@@ -53,7 +53,10 @@ TrelloPowerUp.initialize({
 
     'card-detail-badges': function (t, options) {
         return t.card('name').get('name').then(function (cardName) {
-            return [{ title: "Time", text: GetAllTime || '', color: GetAllTime ? 'blue' : null }];
+            console.log(GetAllTime);
+            return [{
+                title: "Time", text: GetAllTime || '', color: GetAllTime ? 'blue' : null
+            }];
         });
     }
     
@@ -68,21 +71,13 @@ var chooseTime = function (t) {
 };
 
 var GetAllTime = function (t) {
-    var n = '';
-    t.get('card', 'shared', 'time_list')
+
+    return t.get('card', 'shared', 'time_list')
         .then(function (time_list) {
             return [{
-                n = time_list
+                time_list
             }];
         });
-    return n;
-
-    //return t.get('card', 'shared', 'time_list')
-    //    .then(function (time_list) {
-    //        return [{
-    //            time_list
-    //        }];
-    //    });
 }
 //TrelloPowerUp.initialize({
 //  // Start adding handlers for your capabilities here!
