@@ -15,10 +15,9 @@ window.insert_time.addEventListener('submit', function (event) {
                 timeAll = time_spend.value + parseFloat(time_list)
             }
             console.log(timeAll);
-        });
 
-    console(timeAll);
-    return t.set('card', 'shared', 'time_list', timeAll).then(function () { t.closePopup(); });
+            return t.set('card', 'shared', 'time_list', timeAll).then(function () { t.closePopup(); });
+        });
 }); 
 
 t.render(function () {
