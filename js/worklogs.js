@@ -7,6 +7,8 @@ t.render(function () {
             var x = document.getElementById('list_date');
             var opt = document.createElement('li');
             opt.text = data;
+            x.appendChild(opt);
+
         }).then(function () {
             t.sizeTo('#content');
         });
