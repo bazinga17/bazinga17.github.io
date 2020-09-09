@@ -6,7 +6,7 @@
 <body>
     <form id="insert_time">
         <label>Insert time spent:</label>
-        <input type="text" id="get_time" placeholder="4h 30m 23c" size="30" />
+        <input type="text" id="get_time" placeholder="4h 30m 23c" size="30" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" />
         <label>Start in:</label>
         <input type="datetime-local" id="date_in_time" name="date" size="40" />
         <button id="add_work" class="mod-primary" type="submit">Add</button>
