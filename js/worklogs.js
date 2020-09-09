@@ -4,11 +4,9 @@ var t = TrelloPowerUp.iframe();
 
 t.get('card', 'shared', 'time_list', 'not set')
     .then(function (data) {
-        console.log(data);
-//        var x = document.getElementById('list_date');
-//var opt = document.createElement('li');
-//opt.text = data;
-//console.log(x);
+        var x = document.getElementById('list_date');
+        var opt = document.createElement('li');
+        opt.text = data;
     });
 
 
