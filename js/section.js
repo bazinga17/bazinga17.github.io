@@ -11,12 +11,7 @@ window.insert_time.addEventListener('submit', function (event) {
     return t.set('card', 'shared', 'time_list', time_spend.value).then(function () { t.closePopup(); });
 }); 
 
-//t.render(function () {
-//    return t.get('card', 'shared', 'time_list')
-//        .then(function (time_list) {
-//            time_spend.value = time_list;
-//        })
-//        .then(function () {
-//            t.sizeTo('#insert_time');
-//        });
-//});
+t.render(function () {
+    return t.sizeTo('#insert_time');
+
+});

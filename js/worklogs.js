@@ -6,7 +6,7 @@ t.render(function () {
         .then(function (data) {
             var x = document.getElementById('list_date');
             var opt = document.createElement('li');
-            var node = document.createTextNode(data);
+            var node = document.createTextNode('• ' + data);
             opt.appendChild(node);
             x.appendChild(opt);
         }).then(function () {
