@@ -74,7 +74,7 @@ var GetAllTime = function (t) {
     var b = '';
     t.get('card', 'shared', 'time_list')
         .then(function (time_list) {
-            b = time_list;
+            b = time_list.value;
         });
     return b;
 }
