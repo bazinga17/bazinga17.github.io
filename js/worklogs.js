@@ -7,6 +7,7 @@ t.get('card', 'shared', 'time_list', 'not set')
         var x = document.getElementById('list_date');
         var opt = document.createElement('li');
         opt.text = data;
+        console.log(data);
     });
 
 
