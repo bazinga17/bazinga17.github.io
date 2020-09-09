@@ -12,7 +12,7 @@ window.insert_time.addEventListener('submit', function (event) {
     t.get('card', 'shared', 'time_list', 'no')
         .then(function (time_list) {
             if (time_list != 'no') {
-                timeAll = time_spend.value + parseFloat(time_list.replace(",", "."))
+                timeAll = time_spend.value + parseFloat(time_list)
             }
             console.log(timeAll);
         });
