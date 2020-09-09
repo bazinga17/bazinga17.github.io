@@ -16,6 +16,8 @@ window.insert_time.addEventListener('submit', function (event) {
             }
             console.log(timeAll);
         });
+
+    console(timeAll);
     return t.set('card', 'shared', 'time_list', timeAll).then(function () { t.closePopup(); });
 }); 
 
