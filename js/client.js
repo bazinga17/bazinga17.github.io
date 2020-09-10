@@ -27,7 +27,7 @@ TrelloPowerUp.initialize({
         return t.get('card', 'shared', 'time_list')
             .then(function (time_list) {
                 return [{
-                    text: time_list || '',
+                    text: data[0] + 'h ' + data[1] + 'm ' + data[2] + 's' || '',
                     color: time_list ? 'blue' : null,
                 }];
             });
@@ -56,7 +56,7 @@ TrelloPowerUp.initialize({
             .then(function (time_list) {
                 return [{
                     title: "Time",
-                    text: time_list || '',
+                    text: data[0] + 'h ' + data[1] + 'm ' + data[2] + 's' || '',
                     color: time_list ? 'blue' : null,
                 }];
             });
