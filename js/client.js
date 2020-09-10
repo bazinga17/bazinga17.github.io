@@ -26,8 +26,10 @@ TrelloPowerUp.initialize({
     'card-badges': function (t, opts) {
         return t.get('card', 'shared', 'time_list')
             .then(function (time_list) {
+                console.log(time_list);
                 return [{
-                    text: time_list[0] + 'h ' + time_list[1] + 'm ' + time_list[2] + 's' || '',
+
+                    text: time_list || '',
                     color: time_list ? 'blue' : null,
                 }];
             });
