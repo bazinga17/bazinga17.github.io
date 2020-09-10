@@ -15,6 +15,7 @@ window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
     t.get('card', 'shared', 'all_time', 'no')
         .then(function (all_time) {
+
             if (all_time != 'no')
             {
                 if (time_spend.value != "")
