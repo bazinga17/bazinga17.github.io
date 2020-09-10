@@ -84,6 +84,7 @@ window.insert_time.addEventListener('submit', function (event) {
                         date_time.hour = parseFloat(res[0]);
                         console.log(date_time.hour);
                     }
+                    console.log(date_time);
 
                     return t.set('card', 'shared', 'time_list', date_time).then(function () { t.closePopup(); });
                 }
