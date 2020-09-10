@@ -18,6 +18,8 @@ window.insert_time.addEventListener('submit', function (event) {
 
             if (all_time != 'no')
             {
+                console.log('exs');
+
                 if (time_spend.value != "")
                 {
                     var res = time_spend.value.split(" ", 3);
@@ -44,7 +46,7 @@ window.insert_time.addEventListener('submit', function (event) {
                         date_time.min = _min - 60 * m_del;
                         date_time.hour = date_time.hour + parseFloat(res[0]) + m_del;
                     }
-                    else //h
+                    else if (res.length== 1) //h
                     {
                         date_time.hour = data_time.hour + parseFloat(res[0]);
                     }
@@ -54,9 +56,11 @@ window.insert_time.addEventListener('submit', function (event) {
             }
             else
             {
+                console.log('no');
                 //new card
                 if (time_spend.value != "") {                    
                     var res = time_spend.value.split(" ", 3);
+                    console.log(res);
 
                     if (res.length == 3) // all time
                     {
@@ -75,9 +79,10 @@ window.insert_time.addEventListener('submit', function (event) {
                         date_time.min = parseFloat(res[1]) - 60 * m_del;
                         date_time.hour = parseFloat(res[0]) + m_del;
                     }
-                    else //h
+                    else if (res.length == 1) //h
                     {
                         date_time.hour = parseFloat(res[0]);
+                        console.log(date_time.hour);
                     }
 
                     return t.set('card', 'shared', 'time_list', date_time).then(function () { t.closePopup(); });
