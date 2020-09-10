@@ -1,7 +1,7 @@
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-var listDll = require("collections/list");
+//var listDll = require("collections/list");
 
 
 var time_spend = document.getElementById('get_time');
