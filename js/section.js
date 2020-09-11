@@ -15,7 +15,7 @@ function div(val) {
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
-    t.get('card', 'shared', 'all_time34', 'no')
+    t.get('card', 'shared', 'all_time', 'no')
         .then(function (all_time) {
             console.log(JSON.stringify(all_time));
 
