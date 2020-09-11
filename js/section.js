@@ -17,6 +17,8 @@ window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
     t.get('card', 'shared', 'all_time', 'no')
         .then(function (all_time) {
+            console.log(JSON.stringify(all_time));
+
             if (all_time != 'no')
             {
                 let date_time = all_time[0];//for all time
