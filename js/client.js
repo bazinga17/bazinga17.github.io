@@ -25,7 +25,8 @@ TrelloPowerUp.initialize({
 
     'card-badges': function (t, opts) {
         return t.get('card', 'shared', 'all_time')
-            .then(function (time_list) {                
+            .then(function (time_list) {
+                console.log(JSON.stringify(time_list));
                 return [{
                     text: time_list[0].hour + 'h ' + time_list[0].min + 'm ' + time_list[0].sec + 's' || '',
                     color: time_list ? 'blue' : null,
