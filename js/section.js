@@ -32,8 +32,8 @@ window.insert_time.addEventListener('submit', function (event) {
                         let _sec = parseFloat(res[2]) + date_time.sec;
                         let _min = parseFloat(res[1]) + date_time.min;
 
-                        var s_del = _sec % 60;
-                        var m_del = _min % 60;
+                        var s_del = div(_sec);
+                        var m_del = div(_min);
 
                         date_time.sec = _sec - 60 * s_del;
                         date_time.min = _min - 60 * m_del + s_del;
@@ -44,7 +44,7 @@ window.insert_time.addEventListener('submit', function (event) {
                     {
                         let _min = parseFloat(res[1]) + date_time.min;
 
-                        var m_del = _min % 60;
+                        var m_del = div(_min);
 
                         date_time.min = _min - 60 * m_del;
                         date_time.hour = date_time.hour + parseFloat(res[0]) + m_del;
@@ -79,7 +79,7 @@ window.insert_time.addEventListener('submit', function (event) {
                     }
                     else if (res.length == 2)// h and min
                     {
-                        var m_del = parseFloat(res[1]) % 60;
+                        var m_del = div(parseFloat(res[1]));
 
                         date_time.min = parseFloat(res[1]) - 60 * m_del;
                         date_time.hour = parseFloat(res[0]) + m_del;
@@ -90,7 +90,7 @@ window.insert_time.addEventListener('submit', function (event) {
                         console.log(date_time.hour);
                     }
 
-                    console.log(date_time);
+                    console.log(date_time[0]);
 
                     return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
                 }
