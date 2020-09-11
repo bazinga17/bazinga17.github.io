@@ -15,13 +15,13 @@ function div(val) {
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
-    t.get('card', 'shared', 'all_time', 'no')
+    t.get('card', 'shared', 'all_time34', 'no')
         .then(function (all_time) {
             console.log(JSON.stringify(all_time));
 
             if (all_time != 'no')
             {
-                let date_time = all_time[0];//for all time
+                let date_time = all_time;//for all time
 
                 console.log(date_time);
 
@@ -31,29 +31,29 @@ window.insert_time.addEventListener('submit', function (event) {
 
                     if (res.length == 3) // all time
                     {
-                        let _sec = parseFloat(res[2]) + date_time.sec;
-                        let _min = parseFloat(res[1]) + date_time.min;
+                        let _sec = parseFloat(res[2]) + date_time[0].sec;
+                        let _min = parseFloat(res[1]) + date_time[0].min;
 
                         var s_del = div(_sec);
                         var m_del = div(_min);
 
-                        date_time.sec = _sec - 60 * s_del;
-                        date_time.min = _min - 60 * m_del + s_del;
-                        date_time.hour = date_time.hour + parseFloat(res[0]) + m_del;
+                        date_time[0].sec = _sec - 60 * s_del;
+                        date_time[0].min = _min - 60 * m_del + s_del;
+                        date_time[0].hour += parseFloat(res[0]) + m_del;
 
                     }
                     else if (res.length == 2)// h and min
                     {
-                        let _min = parseFloat(res[1]) + date_time.min;
+                        let _min = parseFloat(res[1]) + date_time[0].min;
 
                         var m_del = div(_min);
 
-                        date_time.min = _min - 60 * m_del;
-                        date_time.hour = date_time.hour + parseFloat(res[0]) + m_del;
+                        date_time[0].min = _min - 60 * m_del;
+                        date_time[0].hour += parseFloat(res[0]) + m_del;
                     }
                     else if (res.length== 1) //h
                     {
-                        date_time.hour = data_time.hour + parseFloat(res[0]);
+                        date_time[0].hour += data_time[0].hour + parseFloat(res[0]);
                     }
                 }
                 console.log(date_time);
