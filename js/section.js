@@ -68,26 +68,23 @@ window.insert_time.addEventListener('submit', function (event) {
                     if (res.length == 3) // all time
                     {
                         var s_del = div(parseFloat(res[2]));
-                        console.log(s_del);
                         var m_del = div(parseFloat(res[1]));
-                        console.log(m_del);
 
-                        date_time.sec = parseFloat(res[2]) - 60 * s_del;
-                        date_time.min = parseFloat(res[1]) - 60 * m_del + s_del;
-                        date_time.hour = parseFloat(res[0]) + m_del;
+                        date_time[0].sec = parseFloat(res[2]) - 60 * s_del;
+                        date_time[0].min = parseFloat(res[1]) - 60 * m_del + s_del;
+                        date_time[0].hour = parseFloat(res[0]) + m_del;
 
                     }
                     else if (res.length == 2)// h and min
                     {
                         var m_del = div(parseFloat(res[1]));
 
-                        date_time.min = parseFloat(res[1]) - 60 * m_del;
-                        date_time.hour = parseFloat(res[0]) + m_del;
+                        date_time[0].min = parseFloat(res[1]) - 60 * m_del;
+                        date_time[0].hour = parseFloat(res[0]) + m_del;
                     }
                     else if (res.length == 1) //h
                     {
-                        date_time.hour = parseFloat(res[0]);
-                        console.log(date_time.hour);
+                        date_time[0].hour = parseFloat(res[0]);
                     }
 
                     console.log(date_time[0]);
