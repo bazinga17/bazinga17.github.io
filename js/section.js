@@ -63,8 +63,10 @@ window.insert_time.addEventListener('submit', function (event) {
 
                     if (res.length == 3) // all time
                     {
-                        var s_del = parseFloat(res[2])%60;
-                        var m_del = parseFloat(res[1])%60;
+                        var s_del = parseFloat(res[2]) % 60;
+                        console.log(s_del);
+                        var m_del = parseFloat(res[1]) % 60;
+                        console.log(m_del);
 
                         date_time.sec = parseFloat(res[2]) - 60 * s_del;
                         date_time.min = parseFloat(res[1]) - 60 * m_del + s_del;
