@@ -53,7 +53,7 @@ window.insert_time.addEventListener('submit', function (event) {
                     }
                     else if (res.length== 1) //h
                     {
-                        date_time[0].hour += data_time[0].hour + parseFloat(res[0]);
+                        date_time[0].hour += parseFloat(res[0]);
                     }
                 }
                 console.log(date_time);
