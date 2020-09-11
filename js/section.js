@@ -15,7 +15,7 @@ window.insert_time.addEventListener('submit', function (event) {
         .then(function (all_time) {
             if (all_time != 'no')
             {
-                let date_time = all_time;//for all time
+                let date_time = all_time[0];//for all time
 
                 console.log(date_time);
 
