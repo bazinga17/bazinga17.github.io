@@ -7,7 +7,7 @@ var t = TrelloPowerUp.iframe();
 var time_spend = document.getElementById('get_time');
 var _date = document.getElementById('date_in_time');
 
-var list = [];//list time's date user-time star-spend
+//var list = [];//list time's date user-time star-spend
 
 function div(val) {
     return (val - val % 60) / 60;
@@ -15,9 +15,9 @@ function div(val) {
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
+
     t.get('card', 'shared', 'all_time', 'no')
         .then(function (all_time) {
-            console.log(JSON.stringify(all_time));
 
             if (all_time != 'no')
             {
@@ -93,6 +93,21 @@ window.insert_time.addEventListener('submit', function (event) {
                 }
             }
         });
+
+    t.get('card', 'shared', 'user_list', 'no').then(function (list_user)
+    {
+        if (list_user != 'no') {
+            let list_us = list_user;
+
+            list_us.add({ name: 'user2', time_start: _date.value, spend: time_spend.value });
+            return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
+        }
+        else {
+            let list_us = [{ name: 'user', time_start: _date.value, spend: time_spend.value }];
+
+            return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
+        }
+    });
 }); 
 
 t.render(function () {
