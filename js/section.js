@@ -15,7 +15,7 @@ function div(val) {
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
-    t.get('card', 'shared', 'all_time213', 'no')
+    t.get('card', 'shared', 'all_time', 'no')
         .then(function (all_time) {
             if (all_time != 'no')
             {
@@ -86,8 +86,6 @@ window.insert_time.addEventListener('submit', function (event) {
                     {
                         date_time[0].hour = parseFloat(res[0]);
                     }
-
-                    console.log(date_time[0]);
 
                     return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
                 }
