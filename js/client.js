@@ -24,7 +24,7 @@ TrelloPowerUp.initialize({
     },
 
     'card-badges': function (t, opts) {
-        return t.get('card', 'shared', 'time_list')
+        return t.get('card', 'shared', 'all_time')
             .then(function (time_list) {                
                 return [{
                     text: time_list[0].hour + 'h ' + time_list[0].min + 'm ' + time_list[0].sec + 's' || '',
@@ -52,7 +52,7 @@ TrelloPowerUp.initialize({
     },
 
     'card-detail-badges': function (t, options) {
-        return t.get('card', 'shared', 'time_list')
+        return t.get('card', 'shared', 'all_time')
             .then(function (time_list) {
                 return [{
                     title: "Time",

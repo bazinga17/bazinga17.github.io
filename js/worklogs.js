@@ -2,7 +2,7 @@ var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
 t.render(function () {
-    return t.get('card', 'shared', 'time_list', 'not set')
+    return t.get('card', 'shared', 'all_time', 'not set')
         .then(function (time_list) {
             var x = document.getElementById('list_date');
             var opt = document.createElement('li');
