@@ -8,17 +8,14 @@ var time_spend = document.getElementById('get_time');
 var _date = document.getElementById('date_in_time');
 
 var list = [];//list time's date user-time star-spend
-var date_time = [{ hour: 0, min: 0, sec: 0 }];//for all time
-let delta = 0;
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
     t.get('card', 'shared', 'all_time', 'no')
         .then(function (all_time) {
-
             if (all_time != 'no')
             {
-                console.log('exs');
+                let date_time = all_time;//for all time
 
                 if (time_spend.value != "")
                 {
@@ -54,13 +51,13 @@ window.insert_time.addEventListener('submit', function (event) {
 
                 return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
             }
-            else
+            else                //new card
             {
-                console.log('no');
-                //new card
-                if (time_spend.value != "") {                    
+                let date_time = [{ hour: 0, min: 0, sec: 0 }];//for all time
+
+                if (time_spend.value != "")
+                {                    
                     var res = time_spend.value.split(" ", 3);
-                    console.log(res);
 
                     if (res.length == 3) // all time
                     {
