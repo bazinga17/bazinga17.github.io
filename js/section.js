@@ -11,7 +11,7 @@ var list = [];//list time's date user-time star-spend
 
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
-    t.get('card', 'shared', 'all_time', 'no')
+    t.get('card', 'shared', 'all_time213', 'no')
         .then(function (all_time) {
             if (all_time != 'no')
             {
@@ -50,7 +50,7 @@ window.insert_time.addEventListener('submit', function (event) {
                         date_time.hour = data_time.hour + parseFloat(res[0]);
                     }
                 }
-
+                console.log(date_time);
                 return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
             }
             else                //new card
