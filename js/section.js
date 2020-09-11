@@ -17,6 +17,8 @@ window.insert_time.addEventListener('submit', function (event) {
             {
                 let date_time = all_time;//for all time
 
+                console.log(date_time);
+
                 if (time_spend.value != "")
                 {
                     var res = time_spend.value.split(" ", 3);
