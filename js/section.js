@@ -1,13 +1,9 @@
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-//var listDll = require("collections/list");
-
 
 var time_spend = document.getElementById('get_time');
 var _date = document.getElementById('date_in_time');
-
-//var list = [];//list time's date user-time star-spend
 
 function div(val) {
     return (val - val % 60) / 60;
@@ -109,7 +105,7 @@ window.insert_time.addEventListener('submit', function (event) {
             let list_us = [{ name: 'user', time_start: 0, spend: 0 }];
             list_us[0].name = 'user';
             list_us[0].time_start = _date.value;
-            list[0].spend = time_spend.value;
+            list_us[0].spend = time_spend.value;
 
             console.log(_date.value + time_spend.value);
 
