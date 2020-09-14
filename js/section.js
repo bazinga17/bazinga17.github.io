@@ -100,12 +100,11 @@ window.insert_time.addEventListener('submit', function (event) {
 
             //return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
         }
-        else
-        {
-        var users = [];
-        users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
+        else {
+            var users = [];
+            users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
             console.log(users);
-            //return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
+            return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
         }
     });
 }); 
