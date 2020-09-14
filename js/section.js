@@ -100,11 +100,13 @@ window.insert_time.addEventListener('submit', function (event) {
             let list_us = list_user;
 
             list_us.add({ name: 'user2', time_start: _date.value, spend: time_spend.value });
+            console.log(list_us);
+
             return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
         }
         else {
             let list_us = [{ name: 'user', time_start: _date.value, spend: time_spend.value }];
-
+            console.log(list_us);
             return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
         }
     });
