@@ -101,11 +101,9 @@ window.insert_time.addEventListener('submit', function (event) {
         //    return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
         //}
         //else {
-        var users = [];
-        users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
-
-        console.log(users[0].name + users[0].spend + users[0].time_start);
-
+        //var users = [];
+        //users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
+        var users = [{ name: 'name1', time_start: _date.value, spend: time_spend.value }];
         console.log(users);
 
             //return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
