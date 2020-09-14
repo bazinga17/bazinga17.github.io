@@ -102,7 +102,7 @@ window.insert_time.addEventListener('submit', function (event) {
         }
         else {
             //let list_us = [{ name: 'user', time_start: _date.value, spend: time_spend.value }];
-            let list_us = [{ name: 'user', time_start: 0, spend: 0 }];
+            let list_us = [{ name: 'user', time_start: '0', spend: '0' }];
             list_us[0].name = 'user';
             list_us[0].time_start = _date.value;
             list_us[0].spend = time_spend.value;
