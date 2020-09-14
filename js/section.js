@@ -106,6 +106,9 @@ window.insert_time.addEventListener('submit', function (event) {
         }
         else {
             let list_us = [{ name: 'user', time_start: _date.value, spend: time_spend.value }];
+
+            console.log(_date.value + time_spend.value);
+
             console.log(list_us);
             return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
         }
