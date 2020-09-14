@@ -107,8 +107,8 @@ window.insert_time.addEventListener('submit', function (event) {
             //list_us[0].time_start = _date.value;
             //list_us[0].spend = time_spend.value;
 
-            console.log(list_us);
-            return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
+            console.log('user');
+            //return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
         //}
     });
 }); 
