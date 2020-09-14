@@ -92,22 +92,20 @@ window.insert_time.addEventListener('submit', function (event) {
 
     t.get('card', 'shared', 'user_list123', 'no').then(function (list_user)
     {
-        //if (list_user != 'no') {
-        //    let list_us = list_user;
+        if (list_user != 'no') {
+            let list_us = list_user;
 
-        //    list_us.add({ name: 'user2', time_start: _date.value, spend: time_spend.value });
-        //    console.log(list_us);
+            list_us.add({ name: 'user2', time_start: _date.value, spend: time_spend.value });
+            console.log(list_us);
 
-        //    return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
-        //}
-        //else {
-        //var users = [];
-        //users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
-        var users = [{ name: 'name1', time_start: _date.value, spend: time_spend.value }];
-        console.log(users);
-
-            //return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
-        //}
+            return t.set('card', 'shared', 'user_list', list_us).then(function () { t.closePopup(); });
+        }
+        else
+        {
+            var users = [{ name: 'name1', time_start: _date.value, spend: time_spend.value }];
+            console.log(users);
+            return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
+        }
     });
 }); 
 
