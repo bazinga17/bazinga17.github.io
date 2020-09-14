@@ -104,6 +104,7 @@ window.insert_time.addEventListener('submit', function (event) {
         var users = [];
         users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
 
+        console.log(users[0].name + users[0].spend + users[0].time_start);
 
         console.log(users);
 
