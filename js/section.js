@@ -105,7 +105,7 @@ window.insert_time.addEventListener('submit', function (event) {
             users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
             console.log(users);
 
-            return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
+            //return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
         }
     });
 }); 
