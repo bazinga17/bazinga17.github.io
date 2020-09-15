@@ -109,6 +109,6 @@ window.insert_time.addEventListener('submit', function (event) {
 }); 
 
 t.render(function () {
-    return t.sizeTo();
+    return t.sizeTo('#insert_time');
 
 });
