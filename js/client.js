@@ -39,7 +39,6 @@ TrelloPowerUp.initialize({
             },
             text: 'Upload time',
             callback: function () {
-                console.log(t);
                 console.log(t.member());
             },
         }
