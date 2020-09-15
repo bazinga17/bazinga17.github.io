@@ -13,9 +13,9 @@ t.render(function () {
             //    opt.appendChild(node);
             //    x.appendChild(opt);
             //}
-        }).then(function () {
-            t.sizeTo('#content');
-        });
+        })//.then(function () {
+        //    t.sizeTo('#content');
+        //});
 });
 
 
