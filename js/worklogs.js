@@ -8,7 +8,7 @@ t.render(function () {
 
                 var x = document.getElementById('list_date');
                 var opt = document.createElement('li');
-                var node = document.createTextNode(time_list[i].name + ' - ' + time_list[i].time_start + ' ' + time_list[i].time_spend);
+                var node = document.createTextNode(time_list[i].name + ' - ' + time_list[i].time_start + ' ' + time_list[i].spend);
                 opt.appendChild(node);
                 x.appendChild(opt);
             }
