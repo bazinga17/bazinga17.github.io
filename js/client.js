@@ -43,7 +43,7 @@ TrelloPowerUp.initialize({
 
                 console.log(temp);                
 
-                console.log(temp.settledValue);
+                console.log(this._settledValue);
 
                 return t.member('all')
                     .then(function (member) {
