@@ -47,6 +47,8 @@ TrelloPowerUp.initialize({
 
                 //console.log(temp);
                 var _date = new Date();
+                console.log(_date);
+
                 var _d = _date.getFullYear() + ' ' + _date.getMonth();
                 console.log(_d);
 
