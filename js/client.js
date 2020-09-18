@@ -41,14 +41,12 @@ TrelloPowerUp.initialize({
             callback: function () {
                 var temp = t.member('username', 'fullName');
 
-                console.log(temp);                
+                console.log(JSON.stringify(temp, null, 2));             
 
-                console.log(temp._settledValue.username);
+                //return t.member('all')
+                //    .then(function (member) {
 
-                return t.member('all')
-                    .then(function (member) {
-                        console.log(JSON.stringify(member, null, 2));
-                    });
+                //    });
             },
         }
         ]
