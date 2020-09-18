@@ -41,7 +41,9 @@ TrelloPowerUp.initialize({
             callback: function () {
                 var temp = t.member('username', 'fullName');
 
-                console.log(temp._settledValue);
+                console.log(temp);                
+
+                console.log(temp.settledValue);
 
                 return t.member('all')
                     .then(function (member) {
