@@ -12,10 +12,7 @@ function div(val) {
 
 function get_spend(interval, d_val) {
 
-    console.log(d_val);
-
     let res = interval.split(" ", 3);
-    console.log(res);
 
     if (res.length == 3) // all time
     {
@@ -42,7 +39,6 @@ function get_spend(interval, d_val) {
     {
         d_val[0].hour += parseFloat(res[0]);
     }
-    console.log(d_val);
 
     return d_val;
 }
@@ -87,9 +83,9 @@ window.insert_time.addEventListener('submit', function (event) {
                     let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
                     let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
 
-                    t.member('username', 'fullName').then(function (mem) { users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); });
+                    t.member('username', 'fullName').then(function (mem) { //users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); });
                     
-                    t.set('card', 'shared', 'user_list', users);
+                    //t.set('card', 'shared', 'user_list', users);
                 });
 
                 get_spend(time_spend.value, date_time);
