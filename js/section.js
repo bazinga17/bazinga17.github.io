@@ -50,7 +50,7 @@ function get_spend(interval, d_val) {
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    t.get('card', 'shared', 'all_time123', 'no')
+    t.get('card', 'shared', 'all_time', 'no')
         .then(function (all_time) {
 
             if (all_time != 'no')
@@ -75,29 +75,7 @@ window.insert_time.addEventListener('submit', function (event) {
                 {                    
                     var res = time_spend.value.split(" ", 3);
 
-                    get_spend(time_spend.value, date_time);
-
-                    //if (res.length == 3) // all time
-                    //{
-                    //    var s_del = div(parseFloat(res[2]));
-                    //    var m_del = div(parseFloat(res[1]));
-
-                    //    date_time[0].sec = parseFloat(res[2]) - 60 * s_del;
-                    //    date_time[0].min = parseFloat(res[1]) - 60 * m_del + s_del;
-                    //    date_time[0].hour = parseFloat(res[0]) + m_del;
-
-                    //}
-                    //else if (res.length == 2)// h and min
-                    //{
-                    //    var m_del = div(parseFloat(res[1]));
-
-                    //    date_time[0].min = parseFloat(res[1]) - 60 * m_del;
-                    //    date_time[0].hour = parseFloat(res[0]) + m_del;
-                    //}
-                    //else if (res.length == 1) //h
-                    //{
-                    //    date_time[0].hour = parseFloat(res[0]);
-                    //}
+                    get_spend(time_spend.value, date_time);                    
 
                     return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
                 }
