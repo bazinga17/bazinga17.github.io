@@ -11,7 +11,7 @@ function div(val) {
 }
 
 function get_spend(interval, d_val) {
-    let res = interval.value.split(" ", 3);
+    let res = interval.split(" ", 3);
 
     if (res.length == 3) // all time
     {
