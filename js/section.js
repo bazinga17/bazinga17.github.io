@@ -103,8 +103,8 @@ window.insert_time.addEventListener('submit', function (event) {
         else {
             let users = [];
             let val = new Date(_date.value);
-            let _d = val.value.getFullYear() + '/' + (val.value.getMonth() + 1) + '/' + val.value.getDate();
-            let _t = val.value.getHours() + ':' + val.value.getMinutes() + ':' + val.value.getSeconds();
+            let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
+            let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
 
             console.log(_d);
             console.log(_t);
