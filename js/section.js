@@ -79,7 +79,6 @@ window.insert_time.addEventListener('submit', function (event) {
         {
             if (time_spend.value != "" && _date.value != "") {
                 let date_time = [{ hour: 0, min: 0, sec: 0 }];//for all time
-                get_spend(time_spend.value, date_time);
 
                 t.get('card', 'shared', 'user_list123').then(function (list_user) {
                     let users = [];
@@ -88,17 +87,12 @@ window.insert_time.addEventListener('submit', function (event) {
                     let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
                     let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
 
-                    t.member('username', 'fullName').then(function (mem) {
-
-                        return users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value });
-
-                    });
-
-
-                    return t.set('card', 'shared', 'user_list', users);
-
+                    t.member('username', 'fullName').then(function (mem) { return users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); });
+                    
+                    t.set('card', 'shared', 'user_list', users);
                 });
 
+                get_spend(time_spend.value, date_time);
                 return t.set('card', 'shared', 'all_time', date_time);
             }
         }
