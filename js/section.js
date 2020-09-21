@@ -102,7 +102,14 @@ window.insert_time.addEventListener('submit', function (event) {
         }
         else {
             let users = [];
-            users.push({ name: 'name1', time_start: _date.value, spend: time_spend.value });
+
+            let _d = _date.getFullYear() + '/' + (_date.getMonth() + 1) + '/' + _date.getDate();
+            let _t = _date.getHours() + ':' + _date.getMinutes() + ':' + _date.getSeconds();
+
+            console.log(_d);
+            console.log(_t);
+
+            users.push({ name: 'name1', date_in: _date.value, spend: time_spend.value });
 
             return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
         }
