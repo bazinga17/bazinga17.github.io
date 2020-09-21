@@ -64,7 +64,8 @@ window.insert_time.addEventListener('submit', function (event) {
 
                     get_spend(time_spend.value, date_time);
 
-                    return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
+                    t.set('card', 'shared', 'all_time', date_time); //.then(function () { t.closePopup(); });
+                    return t.closePopup();
                 }
             }
             else                //new card
