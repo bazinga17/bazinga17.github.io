@@ -11,7 +11,11 @@ function div(val) {
 }
 
 function get_spend(interval, d_val) {
+
+    console.log(d_val);
+
     let res = interval.split(" ", 3);
+    console.log(res);
 
     if (res.length == 3) // all time
     {
@@ -38,6 +42,7 @@ function get_spend(interval, d_val) {
     {
         d_val[0].hour += parseFloat(res[0]);
     }
+    console.log(d_val);
 
     return d_val;
 }
