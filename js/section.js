@@ -86,7 +86,7 @@ window.insert_time.addEventListener('submit', function (event) {
                     t.member('username', 'fullName').then(function (mem) { //users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); 
                     });
                     
-                    //t.set('card', 'shared', 'user_list', users);
+                    t.set('card', 'shared', 'user_list', users);
                 });
 
                 get_spend(time_spend.value, date_time);
