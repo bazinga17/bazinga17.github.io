@@ -50,38 +50,29 @@ function get_spend(interval, d_val) {
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    t.get('card', 'shared', 'all_time', 'no')
-        .then(function (all_time) {
+    t.get('card', 'shared', 'all_time', 'no').then(function (all_time) {
 
-            if (all_time != 'no')
-            {
-                let date_time = all_time;//for all time
-                console.log(date_time);
+        if (all_time != 'no') {
+            let date_time = all_time;//for all time
 
-                if (time_spend.value != "")
-                {
-                    var res = time_spend.value.split(" ", 3);
+            if (time_spend.value != "") {
+                get_spend(time_spend.value, date_time);
 
-                    get_spend(time_spend.value, date_time);
-
-                    t.set('card', 'shared', 'all_time', date_time); //.then(function () { t.closePopup(); });
-                    return t.closePopup();
-                }
+                return t.set('card', 'shared', 'all_time', date_time); //.then(function () { t.closePopup(); });
+                //return t.closePopup();
             }
-            else                //new card
-            {
-                let date_time = [{ hour: 0, min: 0, sec: 0 }];//for all time
+        }
+        else                //new card
+        {
+            let date_time = [{ hour: 0, min: 0, sec: 0 }];//for all time
 
-                if (time_spend.value != "")
-                {                    
-                    var res = time_spend.value.split(" ", 3);
+            if (time_spend.value != "") {
+                get_spend(time_spend.value, date_time);
 
-                    get_spend(time_spend.value, date_time);                    
-
-                    return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
-                }
+                return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
             }
-        });
+        }
+    }).then(function () { t.closePopup() });
 
 //    t.get('card', 'shared', 'user_list123', 'no').then(function (list_user)
 //    {
