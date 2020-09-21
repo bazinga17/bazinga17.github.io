@@ -102,9 +102,9 @@ window.insert_time.addEventListener('submit', function (event) {
         }
         else {
             let users = [];
-
-            let _d = _date.value.getFullYear() + '/' + (_date.value.getMonth() + 1) + '/' + _date.value.getDate();
-            let _t = _date.value.getHours() + ':' + _date.value.getMinutes() + ':' + _date.value.getSeconds();
+            let val = new Date(_date.value);
+            let _d = val.value.getFullYear() + '/' + (val.value.getMonth() + 1) + '/' + val.value.getDate();
+            let _t = val.value.getHours() + ':' + val.value.getMinutes() + ':' + val.value.getSeconds();
 
             console.log(_d);
             console.log(_t);
