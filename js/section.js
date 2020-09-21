@@ -1,7 +1,7 @@
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-document.getElementById('date_in_time').value.set()
+//document.getElementById('date_in_time').value.set()
 
 var time_spend = document.getElementById('get_time');
 var _date = document.getElementById('date_in_time');
