@@ -50,7 +50,7 @@ function get_spend(interval, d_val) {
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    t.get('card', 'shared', 'all_time', 'no')
+    t.get('card', 'shared', 'all_time123', 'no')
         .then(function (all_time) {
 
             if (all_time != 'no')
@@ -62,36 +62,10 @@ window.insert_time.addEventListener('submit', function (event) {
                 {
                     var res = time_spend.value.split(" ", 3);
 
-                    //if (res.length == 3) // all time
-                    //{
-                    //    let _sec = parseFloat(res[2]) + date_time[0].sec;
-                    //    let _min = parseFloat(res[1]) + date_time[0].min;
+                    get_spend(time_spend.value, date_time);
 
-                    //    var s_del = div(_sec);
-                    //    var m_del = div(_min);
-
-                    //    date_time[0].sec = _sec - 60 * s_del;
-                    //    date_time[0].min = _min - 60 * m_del + s_del;
-                    //    date_time[0].hour += parseFloat(res[0]) + m_del;
-
-                    //}
-                    //else if (res.length == 2)// h and min
-                    //{
-                    //    let _min = parseFloat(res[1]) + date_time[0].min;
-
-                    //    var m_del = div(_min);
-
-                    //    date_time[0].min = _min - 60 * m_del;
-                    //    date_time[0].hour += parseFloat(res[0]) + m_del;
-                    //}
-                    //else if (res.length== 1) //h
-                    //{
-                    //    date_time[0].hour += parseFloat(res[0]);
-                    //}
+                    return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
                 }
-                console.log(get_spend(time_spend.value, date_time));
-
-                return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
             }
             else                //new card
             {
@@ -101,27 +75,29 @@ window.insert_time.addEventListener('submit', function (event) {
                 {                    
                     var res = time_spend.value.split(" ", 3);
 
-                    if (res.length == 3) // all time
-                    {
-                        var s_del = div(parseFloat(res[2]));
-                        var m_del = div(parseFloat(res[1]));
+                    get_spend(time_spend.value, date_time);
 
-                        date_time[0].sec = parseFloat(res[2]) - 60 * s_del;
-                        date_time[0].min = parseFloat(res[1]) - 60 * m_del + s_del;
-                        date_time[0].hour = parseFloat(res[0]) + m_del;
+                    //if (res.length == 3) // all time
+                    //{
+                    //    var s_del = div(parseFloat(res[2]));
+                    //    var m_del = div(parseFloat(res[1]));
 
-                    }
-                    else if (res.length == 2)// h and min
-                    {
-                        var m_del = div(parseFloat(res[1]));
+                    //    date_time[0].sec = parseFloat(res[2]) - 60 * s_del;
+                    //    date_time[0].min = parseFloat(res[1]) - 60 * m_del + s_del;
+                    //    date_time[0].hour = parseFloat(res[0]) + m_del;
 
-                        date_time[0].min = parseFloat(res[1]) - 60 * m_del;
-                        date_time[0].hour = parseFloat(res[0]) + m_del;
-                    }
-                    else if (res.length == 1) //h
-                    {
-                        date_time[0].hour = parseFloat(res[0]);
-                    }
+                    //}
+                    //else if (res.length == 2)// h and min
+                    //{
+                    //    var m_del = div(parseFloat(res[1]));
+
+                    //    date_time[0].min = parseFloat(res[1]) - 60 * m_del;
+                    //    date_time[0].hour = parseFloat(res[0]) + m_del;
+                    //}
+                    //else if (res.length == 1) //h
+                    //{
+                    //    date_time[0].hour = parseFloat(res[0]);
+                    //}
 
                     return t.set('card', 'shared', 'all_time', date_time).then(function () { t.closePopup(); });
                 }
