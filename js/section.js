@@ -91,7 +91,7 @@ window.insert_time.addEventListener('submit', function (event) {
     //        }
     //    });
 
-    t.get('card', 'shared', 'user_list', 'no').then(function (list_user)
+    t.get('card', 'shared', 'user_list123', 'no').then(function (list_user)
     {
         if (list_user != 'no') {
             let users = list_user;
