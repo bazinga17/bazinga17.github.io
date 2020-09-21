@@ -83,14 +83,14 @@ window.insert_time.addEventListener('submit', function (event) {
                     let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
                     let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
 
-                    t.member('username', 'fullName').then(function (mem) { //users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); 
+                    t.member('username', 'fullName').then(function (mem) { users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); 
                     });
                     
                     t.set('card', 'shared', 'user_list', users);
-                });
 
-                get_spend(time_spend.value, date_time);
-                return t.set('card', 'shared', 'all_time', date_time);
+                    get_spend(time_spend.value, date_time);
+                    return t.set('card', 'shared', 'all_time', date_time);
+                });
             }
         }
     }).then(function () { t.closePopup() });
