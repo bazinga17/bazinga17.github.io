@@ -92,6 +92,7 @@ window.insert_time.addEventListener('submit', function (event) {
                 t.set('card', 'shared', 'all_time', date_time);
             }
         }
+        return;
     }).then(function () { t.closePopup() });
 }); 
 
