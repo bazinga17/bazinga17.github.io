@@ -46,81 +46,53 @@ function get_spend(interval, d_val) {
 window.insert_time.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    t.member('username', 'fullName').then(function (mem)
-    {
-        t.get('card', 'shared', 'user_list123').then(function (list_user) {
-            let users = [];
+    t.get('card', 'shared', 'all_time123', 'no').then(function (all_time) {
 
-            let val = new Date(_date.value);
-            let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
-            let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
+        if (all_time != 'no') {
+            let date_time = all_time;//for all time
 
+            if (time_spend.value != "" && _date.value != "") {
 
-            users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value });
+                get_spend(time_spend.value, date_time);
 
-            t.set('card', 'shared', 'user_list', users);
-        });
-        t.get('card', 'shared', 'all_time123', 'no').then(function (all_time) {
-            let date_time = [{ hour: 5, min: 5, sec: 5 }];//for all time
-            t.set('card', 'shared', 'all_time', date_time);
-        });
+                t.get('card', 'shared', 'user_list123').then(function (list_user) {
+                    //    let users = list_user;
 
-    }).then(function () { t.closePopup() });
+                    //    let val = new Date(_date.value);
+                    //    let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
+                    //    let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
 
+                    //    users.push({ name: 'name1', date_in: _d, time_in: _t, spend: time_spend.value });
 
+                    //    return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
 
+                });
 
+                return t.set('card', 'shared', 'all_time', date_time);
+            }
+        }
+        else                //new card
+        {
+            if (time_spend.value != "" && _date.value != "") {
+                let date_time = [{ hour: 0, min: 0, sec: 0 }];//for all time
 
+                t.get('card', 'shared', 'user_list123').then(function (list_user) {
+                    let users = [];
 
+                    let val = new Date(_date.value);
+                    let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
+                    let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
 
-    //t.get('card', 'shared', 'all_time123', 'no').then(function (all_time) {
-
-    //    if (all_time != 'no') {
-    //        let date_time = all_time;//for all time
-
-    //        if (time_spend.value != "" && _date.value != "") {
-
-    //            get_spend(time_spend.value, date_time);
-
-    //            t.get('card', 'shared', 'user_list123').then(function (list_user) {
-    //                //    let users = list_user;
-
-    //                //    let val = new Date(_date.value);
-    //                //    let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
-    //                //    let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
-
-    //                //    users.push({ name: 'name1', date_in: _d, time_in: _t, spend: time_spend.value });
-
-    //                //    return t.set('card', 'shared', 'user_list', users).then(function () { t.closePopup(); });
-
-    //            });
-
-    //            return t.set('card', 'shared', 'all_time', date_time);
-    //        }
-    //    }
-    //    else                //new card
-    //    {
-    //        if (time_spend.value != "" && _date.value != "") {
-    //            let date_time = [{ hour: 0, min: 0, sec: 0 }];//for all time
-
-    //            t.get('card', 'shared', 'user_list123').then(function (list_user) {
-    //                let users = [];
-
-    //                let val = new Date(_date.value);
-    //                let _d = val.getFullYear() + '/' + (val.getMonth() + 1) + '/' + val.getDate();
-    //                let _t = val.getHours() + ':' + val.getMinutes() + ':' + val.getSeconds();
-
-    //                t.member('username', 'fullName').then(function (mem) { users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); 
-    //                });
+                    t.member('username', 'fullName').then(function (mem) { users.push({ name: mem.username, date_in: _d, time_in: _t, spend: time_spend.value }); 
+                    });
                     
-    //                t.set('card', 'shared', 'user_list', users);
-    //            });
-
-    //            get_spend(time_spend.value, date_time);
-    //            return t.set('card', 'shared', 'all_time', date_time);
-    //        }
-    //    }
-    //}).then(function () { t.closePopup() });
+                    t.set('card', 'shared', 'user_list', users);
+                });
+                get_spend(time_spend.value, date_time);
+                return t.set('card', 'shared', 'all_time', date_time);
+            }
+        }
+    }).then(function () { t.closePopup() });
 }); 
 
 t.render(function () {
